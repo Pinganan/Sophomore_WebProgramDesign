@@ -1,0 +1,35 @@
+.container1 {
+  border: 0 solid #fffbd6;
+  background-color: #fffae9;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.container2 {
+  border: 3px solid #ffdccf;
+  background-color: #ffe7d7;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  max-width: 63%;
+}
+
+#biglogo {
+  position: fixed;
+  z-index: 9000;
+  bottom: 8%;
+  right: 0;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.card-text {
+  color: black;
+}
+
+.text-justify {
+  color: #464646;
+}

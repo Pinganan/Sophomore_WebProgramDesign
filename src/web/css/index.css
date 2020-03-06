@@ -1,0 +1,14 @@
+body {
+  background-image: url(../img/blue-snow.png);
+}
+
+#centertext {
+  text-align: center;
+}
+
+.card-wrap {
+  background: rgb(255, 244, 229);
+  width: 230px;
+  height: 215px;
+  position: relative;
+}

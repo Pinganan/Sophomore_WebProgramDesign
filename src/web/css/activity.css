@@ -1,0 +1,41 @@
+select {
+  width: 20%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.nvmp6su3 {
+  outline-width: 1px;
+  outline-color: grey;
+  text-decoration: none;
+  border: 1px solid transparent;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+  margin-left: -1px;
+  padding: 4px 11px;
+  display: inline-block;
+  width: 100%;
+  background-color: rgb(227, 50, 71);
+  border-radius: 10% !important;
+  color: white;
+}
+
+#j94t8wj6qu04 {
+  width: 50%;
+  height: 50%;
+  margin-right: 10px;
+  border: 2px;
+  padding: 2%;
+}
+
+#jp6y4b4fu6 {
+  font-style: initial;
+  font-family: monospace;
+  font-size: "6";
+  vertical-align: middle;
+}
+
+.rounded {
+  border-radius: 10% !important;
+}

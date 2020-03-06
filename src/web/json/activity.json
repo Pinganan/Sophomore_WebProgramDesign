@@ -1,0 +1,98 @@
+[
+    {
+        "date_year": 2019,
+        "date_month": 5,
+        "date_day": 15,
+        "qualification": 0,
+        "ID": 1,
+        "graph": "https://jibaofiles.s3.amazonaws.com/58369793a01547be0f62f0e8.jpg"
+    },
+    {
+        "date_year": 2019,
+        "date_month": 7,
+        "date_day": 16,
+        "qualification": 0,
+        "ID": 2,
+        "graph": "https://pic.pimg.tw/facvnine/1476430577-1191020923.png"
+    },
+    {
+        "date_year": 2019,
+        "date_month": 12,
+        "date_day": 31,
+        "qualification": 0,
+        "ID": 3,
+        "graph": "https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2019/07/29/6/6623340.jpg&x=0&y=0&sw=0&sh=0&exp=3600"
+    },
+    {
+        "date_year": 2019,
+        "date_month": 1,
+        "date_day": 18,
+        "qualification": 0,
+        "ID": 4,
+        "graph": "https://www.kamalan-news.com/archive/local/item/9849.jpg"
+    },
+    {
+        "date_year": 2018,
+        "date_month": 5,
+        "date_day": 15,
+        "qualification": 0,
+        "ID": 5,
+        "graph": "http://ab.hl.gov.tw/Content/images/visual/visual-03.jpg"
+    },
+    {
+        "date_year": 2018,
+        "date_month": 7,
+        "date_day": 18,
+        "qualification": 0,
+        "ID": 6,
+        "graph": "https://images.chinatimes.com/newsphoto/2019-02-19/900/20190219003493.jpg"
+    },
+    {
+        "date_year": 2018,
+        "date_month": 12,
+        "date_day": 31,
+        "qualification": 0,
+        "ID": 7,
+        "graph": "https://storage.googleapis.com/opinion-cms-cwg-tw/article/201806/article-5b22283b4eb01.jpg"
+    },
+    {
+        "date_year": 2018,
+        "date_month": 1,
+        "date_day": 17,
+        "qualification": 0,
+        "ID": 8,
+        "graph": "http://img.youtube.com/vi/EU8aOzXitpI/0.jpg"
+    },
+    {
+        "date_year": 2017,
+        "date_month": 5,
+        "date_day": 16,
+        "qualification": 0,
+        "ID": 9,
+        "graph": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ01GcgjhA4x8KB1c-zf-3gJkl5su6kTvyV3qCtjxb_i9Lz2Ff9&s"
+    },
+    {
+        "date_year": 2017,
+        "date_month": 7,
+        "date_day": 14,
+        "qualification": 0,
+        "ID": 10,
+        "graph": "https://images.chinatimes.com/newsphoto/2019-01-03/900/B07A00_P_04_02.jpg"
+    },
+    {
+        "date_year": 2017,
+        "date_month": 12,
+        "date_day": 28,
+        "qualification": 0,
+        "ID": 11,
+        "graph": "https://img.sportsv.net/img/article/cover/5/67615/fit-5khttG59YF-1200x628.jpg"
+    },
+    {
+        "date_year": 2017,
+        "date_month": 1,
+        "date_day": 5,
+        "qualification": 0,
+        "ID": 12,
+        "graph": "https://img.ltn.com.tw/Upload/news/600/2019/11/29/205.jpg"
+    }
+]

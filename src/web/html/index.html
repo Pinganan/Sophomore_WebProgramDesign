@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script>
+        function changeConcept(e){
+            e.src = "../img/Concepttext.png";
+        }
+        function changeConcept2(e){
+            e.src = "../img/light.gif";
+        }
+        function changeActivity(e){
+            e.src = "../img/Activitytext.png";
+        }
+        function changeActivity2(e){
+            e.src = "../img/day.gif";
+        }
+        function changeFund(e){
+            e.src = "../img/Fundtext.png";
+        }
+        function changeFund2(e){
+            e.src = "../img/love.gif";
+        }
+        function changeCulture(e){
+            e.src = "../img/Culturetext.png";
+        }
+        function changeCulture2(e){
+            e.src = "../img/boat.gif";
+        }
+        function changeF(e){
+            e.src = "../img/flower.gif";
+        }
+        function changeF2(e){
+            e.src = "../img/indextext.png";
+        }
+    </script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6"><a href="concept.html"><img onmouseover="changeConcept2(this)" onmouseout="changeConcept(this)" src="../img/Concepttext.png"
+                        height="215"/></a></div>
+            <div class="col-sm-6"><a href="activity.html"><img onmouseover="changeActivity2(this)" onmouseout="changeActivity(this)" src="../img/Activitytext.png" height="215"
+                        class="float-right"></a></div>
+        </div>
+        <div class="row" id="centertext">
+            <div class="col-sm-12"><img src="../img/indextext.png" height="280">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6"><a href="fund.html"><img onmouseover="changeFund2(this)" onmouseout="changeFund(this)" src="../img/Fundtext.png" height="215"></a>
+            </div>
+            <div class="col-sm-6"><a href="culture.html"><img onmouseover="changeCulture2(this)" onmouseout="changeCulture(this)" src="../img/Culturetext.png" height="215"
+                        class="float-right"></a></div>
+        </div>
+    </div>
+</body>
+
+</html>

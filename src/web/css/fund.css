@@ -1,0 +1,27 @@
+#flotcontainer {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.card {
+  margin: auto;
+  margin-top: 5%;
+}
+
+.form-control {
+  margin: 5%;
+}
+
+#doneforsearch {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 2%;
+}
+
+#sidebarCollapse {
+  margin-top: 5%;
+  margin-left: 0%;
+  margin-bottom: 5%;
+  margin-right: 5%;
+}

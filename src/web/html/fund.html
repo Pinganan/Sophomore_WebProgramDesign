@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>資金</title>
+    <link rel="stylesheet" href="../css/fund.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/TagStyle.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
+        </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
+        </script>
+</head>
+
+<body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://static.pureexample.com/js/flot/excanvas.min.js"></script>
+    <script src="http://static.pureexample.com/js/flot/jquery.flot.min.js"></script>
+    <script src="http://static.pureexample.com/js/flot/jquery.flot.pie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+
+    <div class="wrapper">
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <a href="index.html">
+                    <img width="100%" height="auto" src="../img/pixel_logo.png" class="img-fluid"></a>
+            </div>
+            <ul class="list-unstyled components">
+
+                <li>
+                    <a href="concept.html">理念</a>
+                </li>
+                <li>
+                    <a href="activity.html">活動</a>
+                </li>
+                <li>
+                    <a href="#">資金</a>
+                </li>
+                <li>
+                    <a href="culture.html">文化</a>
+                </li>
+                <li>
+                    <a href="#">待續...</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <i class="fas fa-align-justify"></i>
+                        <span>切換</span>
+                    </button>
+                    <form class="needs-validation" novalidate>
+                        <div class="form-row">
+                            <div class="col col-lg">
+                                <input type="text" class="form-control" placeholder="代碼" value="" required id="code">
+                            </div>
+                            <div class="col col-lg">
+                                <input type="text" class="form-control" placeholder="姓氏" value="" required
+                                    id="firstname">
+                            </div>
+                            <div class="col col-lg">
+                                <input type="text" class="form-control" placeholder="名字" value="" required
+                                    id="lastname">
+                            </div>
+                            <div class="col col-lg">
+                                <input type="text" class="form-control" placeholder="$金額" value="" required id="money">
+                            </div>
+                            <div class="col-sm col-lg">
+                                <a class="btn btn-danger" onclick="listchange()" id="doneforsearch">錢給你惹</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+            <hr>
+            <h1><strong>捐款支持</strong></h1>
+            <div class="row">
+                <div class="card" style="width: 20rem; height: 28rem;">
+                    <div class="card-img-top" style="height: 100%">
+                        <iframe style="border: 0" height="100%" width="100%"
+                            src="http://www.openstreetmap.org/export/embed.html?bbox=119.366,21.719,122.201,25.453&layer=mapnik&marker=25.0375198,121.5636796">
+                        </iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">天龍之助</h5>
+                        <p class="card-text">
+                            幫助他人踏入天龍之世
+                        </p>
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#infModalScrollable">知道更多</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#listModalScrollable">成員清單</button>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="infModalScrollable" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="infModalScrollableTitle">詳細資訊</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="infforfund1"></div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="listModalScrollable" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="listModalScrollableTitle">協助獎金人物</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="listforfund1"></div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 20rem; height: 28rem;">
+                    <div class="card-img-top" style="height: 100%">
+                        <iframe style="border: 0" height="100%" width="100%"
+                            src="http://www.openstreetmap.org/export/embed.html?bbox=119.366,21.719,122.201,25.453&layer=mapnik&marker=22.6466,120.3475">
+                        </iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">消失之所</h5>
+                        <p class="card-text">
+                            尋找遺失的東西
+                        </p>
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#infModalScrollable2">知道更多</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#listModalScrollable2">成員清單</button>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="infModalScrollable2" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="infModalScrollable2Title">詳細資訊</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="infforfund2"></div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="listModalScrollable2" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="listModalScrollable2Title">協助獎金人物</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="listforfund2"></div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 20rem; height: 28rem;">
+                    <div class="card-img-top" style="height: 100%">
+                        <iframe style="border: 0" height="100%" width="100%"
+                            src="http://www.openstreetmap.org/export/embed.html?bbox=119.366,21.719,122.201,25.453&layer=mapnik&marker=24.5153, 120.7013">
+                        </iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">苗栗之外</h5>
+                        <p class="card-text">
+                            踏入新視界
+                        </p>
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#infModalScrollable3">知道更多</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#listModalScrollable3">成員清單</button>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="infModalScrollable3" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="infModalScrollable3Title">詳細資訊</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="infforfund3">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="listModalScrollable3" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="listModalScrollable3Title">協助獎金人物</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="listforfund3">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 20rem; height: 28rem;">
+                    <div class="card-img-top" style="height: 100%">
+                        <iframe style="border: 0" height="100%" width="100%"
+                            src="http://www.openstreetmap.org/export/embed.html?bbox=119.366,21.719,122.201,25.453&layer=mapnik&marker=24.9929995, 121.3010003">
+                        </iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">淹水地帶</h5>
+                        <p class="card-text">
+                            水殘害國際面相
+                        </p>
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#infModalScrollable4">知道更多</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#listModalScrollable4">成員清單</button>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="infModalScrollable4" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="infModalScrollable4Title">詳細資訊</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="infforfund4"></div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="listModalScrollable4" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="listModalScrollable4Title">協助獎金人物</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="listforfund4"></div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 20rem; height: 28rem;">
+                    <div class="card-img-top" style="height: 100%">
+                        <iframe style="border: 0" height="100%" width="100%"
+                            src="http://www.openstreetmap.org/export/embed.html?bbox=119.366,21.719,122.201,25.453&layer=mapnik&marker=22.6664, 120.4519">
+                        </iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">資本主義</h5>
+                        <p class="card-text">
+                            資本主義迫害大眾
+                        </p>
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#infModalScrollable5">知道更多</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#listModalScrollable5">成員清單</button>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="infModalScrollable5" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="infModalScrollable5Title">詳細資訊</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="infforfund5"></div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="listModalScrollable5" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="listModalScrollable5Title">協助獎金人物</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="listforfund5"></div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 20rem; height: 28rem;">
+                    <div class="card-img-top" style="height: 100%">
+                        <iframe style="border: 0" height="100%" width="100%"
+                            src="http://www.openstreetmap.org/export/embed.html?bbox=119.366,21.719,122.201,25.453&layer=mapnik&marker=22.6664, 120.4519">
+                        </iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">甜汁國度</h5>
+                        <p class="card-text">
+                            知道甜蜜也是一種負擔
+                        </p>
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#infModalScrollable6">知道更多</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#listModalScrollable6">成員清單</button>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="infModalScrollable6" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="infModalScrollable6Title">詳細資訊</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="infforfund6"></div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="listModalScrollable6" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="listModalScrollable6Title">協助獎金人物</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="listforfund6"></div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h2><strong>其他捐款通道</strong></h2>
+            <a href="404.html">
+                <div class="container">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKv78_xMJxQcIkOaRhB-le6z6ZlP39meAUDS_dxd8NTo9tMeEy&s">
+                    <img
+                        src="data:image/jpeg;base64,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">
+                    <img src="https://pic.pimg.tw/abc122499848/1529108433-3182557537.jpg">
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <script>
+        window.onload = PreSet(0);
+        function PreSet(num) {
+            if (num == 0) {
+                localStorage.setItem("Need1", 123456);
+                localStorage.setItem("Need2", 234561);
+                localStorage.setItem("Need3", 345612);
+                localStorage.setItem("Need4", 456123);
+                localStorage.setItem("Need5", 561234);
+                localStorage.setItem("Need6", 612345);
+            }
+
+            //part one
+            if (num == 1 || num == 0) {
+                var need = parseInt(localStorage.getItem("Need1"));
+                var take = parseInt(localStorage.getItem("Take1"));
+                var person = localStorage.getItem("People1");
+
+                var listcontent = '';
+                listcontent += person;
+                var infcontent = '<p>' + "活動代碼 : D0000000" + '</p>';
+                infcontent += '<p>' + "活動地點 : 台北" + '</p>';
+                infcontent += '<p>' + "活動時間 : 2020/1/0" + '</p>';
+                infcontent += '<p>' + "協辦單位 : 不會" + '</p>';
+                infcontent += '<p>' + "所需金額 : " + (need - take) + '</p>';
+
+                document.getElementById("infforfund1").innerHTML = infcontent;
+                document.getElementById("listforfund1").innerHTML = listcontent;
+                console.log("1 success");
+            }
+
+            //part two
+            if (num == 2 || num == 0) {
+                var need = parseInt(localStorage.getItem("Need2"));
+                var take = parseInt(localStorage.getItem("Take2"));
+                var person = localStorage.getItem("People2");
+
+                var listcontent = '';
+                listcontent += person;
+                var infcontent = '<p>' + "活動代碼 : D1111111" + '</p>';
+                infcontent += '<p>' + "活動地點 : 高雄" + '</p>';
+                infcontent += '<p>' + "活動時間 : 2021/1/0" + '</p>';
+                infcontent += '<p>' + "協辦單位 : 有廠商" + '</p>';
+                infcontent += '<p>' + "所需金額 : " + (need - take) + '</p>';
+
+                document.getElementById("infforfund2").innerHTML = infcontent;
+                document.getElementById("listforfund2").innerHTML = listcontent;
+                console.log("2 success");
+            }
+
+            //part three
+            if (num == 3 || num == 0) {
+                var need = parseInt(localStorage.getItem("Need3"));
+                var take = parseInt(localStorage.getItem("Take3"));
+                var person = localStorage.getItem("People3");
+
+                var listcontent = '';
+                listcontent += person;
+                var infcontent = '<p>' + "活動代碼 : D2222222" + '</p>';
+                infcontent += '<p>' + "活動地點 : 苗栗" + '</p>';
+                infcontent += '<p>' + "活動時間 : 2022/1/0" + '</p>';
+                infcontent += '<p>' + "協辦單位 : 願意" + '</p>';
+                infcontent += '<p>' + "所需金額 : " + (need - take) + '</p>';
+
+                document.getElementById("infforfund3").innerHTML = infcontent;
+                document.getElementById("listforfund3").innerHTML = listcontent;
+                console.log("3 success");
+            }
+
+            //part four
+            if (num == 4 || num == 0) {
+                var need = parseInt(localStorage.getItem("Need4"));
+                var take = parseInt(localStorage.getItem("Take4"));
+                var person = localStorage.getItem("People4");
+
+                var listcontent = '';
+                listcontent += person;
+                var infcontent = '<p>' + "活動代碼 : D3333333" + '</p>';
+                infcontent += '<p>' + "活動地點 : 桃園" + '</p>';
+                infcontent += '<p>' + "活動時間 : 2022/1/0" + '</p>';
+                infcontent += '<p>' + "協辦單位 : 與我們" + '</p>';
+                infcontent += '<p>' + "所需金額 : " + (need - take) + '</p>';
+
+                document.getElementById("infforfund4").innerHTML = infcontent;
+                document.getElementById("listforfund4").innerHTML = listcontent;
+                console.log("4 success");
+            }
+
+            //part five
+            if (num == 5 || num == 0) {
+                var need = parseInt(localStorage.getItem("Need5"));
+                var take = parseInt(localStorage.getItem("Take5"));
+                var person = localStorage.getItem("People5");
+
+                var listcontent = '';
+                listcontent += person;
+                var infcontent = '<p>' + "活動代碼 : D4444444" + '</p>';
+                infcontent += '<p>' + "活動地點 : 屏東" + '</p>';
+                infcontent += '<p>' + "活動時間 : 2022/1/0" + '</p>';
+                infcontent += '<p>' + "協辦單位 : 合力" + '</p>';
+                infcontent += '<p>' + "所需金額 : " + (need - take) + '</p>';
+
+                document.getElementById("infforfund5").innerHTML = infcontent;
+                document.getElementById("listforfund5").innerHTML = listcontent;
+                console.log("5 success");
+            }
+
+            //part six
+            if (num == 6 || num == 0) {
+                var need = parseInt(localStorage.getItem("Need6"));
+                var take = parseInt(localStorage.getItem("Take6"));
+                var person = localStorage.getItem("People6");
+
+                var listcontent = '';
+                listcontent += person;
+                var infcontent = '<p>' + "活動代碼 : D5555555" + '</p>';
+                infcontent += '<p>' + "活動地點 : 台南" + '</p>';
+                infcontent += '<p>' + "活動時間 : 2022/1/0" + '</p>';
+                infcontent += '<p>' + "協辦單位 : 合作" + '</p>';
+                infcontent += '<p>' + "所需金額 : " + (need - take) + '</p>';
+
+                document.getElementById("infforfund6").innerHTML = infcontent;
+                document.getElementById("listforfund6").innerHTML = listcontent;
+                console.log("6 success");
+            }
+        }
+
+        function listchange() {
+            var code = document.getElementById("code").value;
+            var name = document.getElementById("firstname").value + document.getElementById("lastname").value;
+            var money = parseInt(document.getElementById("money").value);
+
+            if (code == "D0000000") {
+                var person = localStorage.getItem("People1");
+                var take = parseInt(localStorage.getItem("Take1"));
+                person += '<p>' + name + ' : ' + money + '</p>';
+                take += money;
+                localStorage.setItem("People1", person);
+                localStorage.setItem("Take1", take);
+                PreSet(1);
+            }
+            if (code == "D1111111") {
+                var person = localStorage.getItem("People2");
+                var take = parseInt(localStorage.getItem("Take2"));
+                person += '<p>' + name + ' : ' + money + '</p>';
+                take += money;
+                localStorage.setItem("People2", person);
+                localStorage.setItem("Take2", take);
+                PreSet(2);
+            }
+            if (code == "D2222222") {
+                var person = localStorage.getItem("People3");
+                var take = parseInt(localStorage.getItem("Take3"));
+                person += '<p>' + name + ' : ' + money + '</p>';
+                take += money;
+                localStorage.setItem("People3", person);
+                localStorage.setItem("Take3", take);
+                PreSet(3);
+            }
+            if (code == "D3333333") {
+                var person = localStorage.getItem("People4");
+                var take = parseInt(localStorage.getItem("Take4"));
+                person += '<p>' + name + ' : ' + money + '</p>';
+                take += money;
+                localStorage.setItem("People4", person);
+                localStorage.setItem("Take4", take);
+                PreSet(4);
+            }
+            if (code == "D4444444") {
+                var person = localStorage.getItem("People5");
+                var take = parseInt(localStorage.getItem("Take5"));
+                person += '<p>' + name + ' : ' + money + '</p>';
+                take += money;
+                localStorage.setItem("People5", person);
+                localStorage.setItem("Take5", take);
+                PreSet(5);
+            }
+            if (code == "D5555555") {
+                var person = localStorage.getItem("People6");
+                var take = parseInt(localStorage.getItem("Take6"));
+                person += '<p>' + name + ' : ' + money + '</p>';
+                take += money;
+                localStorage.setItem("People6", person);
+                localStorage.setItem("Take6", take);
+                PreSet(6);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
